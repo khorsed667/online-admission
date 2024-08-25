@@ -1,7 +1,9 @@
+import { useRef } from 'react';
 import { FaUser } from 'react-icons/fa'
 import { FaPhotoFilm } from 'react-icons/fa6'
 
 export default function Enroll() {
+    const formRef = useRef();
 
     const handleSubmission = (event) => {
         event.preventDefault();
@@ -42,7 +44,7 @@ export default function Enroll() {
           }
         };
         console.log(formData);
-        fetch("http://localhost:5000/addEnrollment", {
+        fetch("https://admission-server-blush.vercel.app/addEnrollment", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -54,7 +56,7 @@ export default function Enroll() {
             console.log(data);
             if (data.insertedId) {
               alert('Form submitted successfully!');
-              window.location.reload();
+              formRef.current.reset();
             }
           });
       };

@@ -1,3 +1,4 @@
+import { IconButton } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
@@ -9,13 +10,14 @@ const Banner = () => {
           Walk your child with coding!
         </h1>
         <p className="text-lg md:text-xl mb-6">
-          Join us now and learn your child with modern javascript programme. <br />
-          So  why waiting? Let's start now...
+          Join us now and learn your child with modern javascript programme.{" "}
+          <br />
+          So why waiting? Let's start now...
         </p>
         <Link to={"/enroll_form"}>
-          <button className="bg-white text-blue-500 font-semibold py-2 px-6 rounded-full">
-            Enroll now
-          </button>
+          <IconButton color="white" className="px-4 py-2">
+            Enroll Now
+          </IconButton>
         </Link>
       </div>
 
